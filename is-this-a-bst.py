@@ -2,6 +2,17 @@
 Problem:
 https://www.hackerrank.com/challenges/is-binary-search-tree/problem
 
+Intuition:
+In a valid binary search tree, an in-order traversal should yield values in strictly ascending order. 
+
+The first solution uses this property by performing an in-order traversal and storing the values in an array, 
+then checking if the array is sorted. 
+
+The second solution optimizes this by keeping track of the previous value during the in-order traversal, 
+eliminating the need for extra space. 
+
+The third solution checks the BST properties directly by ensuring that each node's value falls 
+within a valid range defined by its ancestors
 
 # Node is defined as
 class node:
@@ -9,6 +20,8 @@ class node:
       self.data = data
       self.left = None
       self.right = None   
+
+
 
 """
 

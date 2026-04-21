@@ -13,8 +13,13 @@ import sys
 # The function accepts INTEGER n as parameter.
 #
 # https://www.hackerrank.com/challenges/ctci-recursive-staircase/problem
+#
+# Intuition: the number of ways to climb n steps is the sum of the number of ways to climb n-1, n-2, and n-3 steps.
+# Solution 1 is an iterative approach that only keeps track of the last 3 values.
+# Solution 2 is a dynamic programming approach that stores all values up to n. 
+# Solution 3 is a recursive approach with memoization to avoid redundant calculations.
 
-# iterative (only need the last 3 values)
+# Solution 1 - iterative (only need the last 3 values)
 def stepPerms(n):
     steps = {1:1,2:2,3:4}
     if n == 1:
@@ -29,8 +34,8 @@ def stepPerms(n):
         steps[2] = steps[3]
         steps[3] = count
     return steps[3]
-'''
-# dynamic programming method
+
+# Solution 2 - dynamic programming method
 def stepPerms(n):
     steps = {1:1,2:2,3:4}
     if n == 1:
@@ -44,8 +49,7 @@ def stepPerms(n):
         # print(steps[i])
     return steps[n]
 
-# recursive memoization
-
+# Solution 3 - recursive memoization
 def stepPerms(n):
     memo = {1:1,2:2,3:4}
     return climb_stairsM(n, memo)
@@ -71,3 +75,4 @@ if __name__ == '__main__':
         fptr.write(str(res) + '\n')
 
     fptr.close()
+    ''' 
