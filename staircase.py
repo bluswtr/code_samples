@@ -76,3 +76,23 @@ if __name__ == '__main__':
 
     fptr.close()
     ''' 
+
+'''
+4/22/2026
+https://neetcode.io/problems/climbing-stairs
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        
+        s = (n+1) * [0]
+        s[0] = 0
+        s[1] = 1
+        s[2] = 2
+
+        for i in range(3,n+1):
+            s[i] = s[i-1] + s[i-2]
+
+        return s[n]
+'''
